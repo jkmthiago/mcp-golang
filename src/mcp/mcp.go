@@ -9,7 +9,7 @@ import (
 
 func NewMcpServer()*server.MCPServer {
 	mcps := server.NewMCPServer(
-		"Fibralink LIA MCP API Server",
+		"MCP API Server",
 		"0.1.0",
 		server.WithToolCapabilities(true),
 		server.WithLogging(),
