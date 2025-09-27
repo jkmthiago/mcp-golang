@@ -1,0 +1,26 @@
+
+services:
+  mcp:
+    container_name: mcp_test_go
+    image: mcr.microsoft.com/vscode/devcontainers/go:dev-1.25-bookworm
+    networks:
+      - mcp
+    ports:
+      - "8080:8080"
+    tty: true
+    volumes:
+      - ./src:/go/src/mcp
+  
+  postgres:
+    container_name: mcp_test_db
+    image: postgres:17.5-alpine3.21
+    networks:
+      - mcp
+    tty: true
+    volumes:
+      - ./services/postgres/data:/var/lib/postgresql/data
+  
+networks:
+  mcp:
+    name: mcp
+    driver: bridge
