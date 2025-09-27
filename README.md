@@ -20,7 +20,7 @@ Este repositorio fornece um servidor MCP escrito em Go. O servidor utiliza a bib
 
 ### Usando Docker Compose
 
-1. Na raiz do projeto, execute `docker compose up -d` para iniciar os containers `mcp` e `postgres`.
+1. Na raiz do projeto, execute `docker compose up -d` para iniciar o container `mcp`.
 2. O servidor MCP ficara acessivel em `http://localhost:8080/api/v1/mcp`.
 3. Para acompanhar logs, use `docker compose logs -f mcp`.
 4. Para encerrar, rode `docker compose down`.
