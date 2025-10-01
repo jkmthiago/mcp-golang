@@ -12,17 +12,17 @@ func HandleCalculator(ctx context.Context, req mcp.CallToolRequest) (*mcp.CallTo
 	
 	op, err := req.RequireString("operation")
 	if err != nil {
-		return nil, err
+		return mcp.NewToolResultError(err.Error()), nil
 	}
 	
 	x, err := req.RequireFloat("x")
 	if err != nil {
-		return nil, err
+		return mcp.NewToolResultError(err.Error()), nil
 	}
 	
 	y, err := req.RequireFloat("y")
 	if err != nil {
-		return nil, err
+		return mcp.NewToolResultError(err.Error()), nil
 	}
 	
 	log.Println("Handle Calculations")
